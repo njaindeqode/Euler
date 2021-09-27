@@ -79,7 +79,7 @@ export const WalletProvider: React.FC<WalletProviderProps> = ({ children }) => {
     if (!walletCheck) return
     const status = onboard.getState()
     setWalletAddress(status.address)
-    fetchUserBalance(status.address)
+    fetchUserBalance(status.address, status.wallet)
   }
 
   const handleDisconnect = async () => {
