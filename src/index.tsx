@@ -3,10 +3,22 @@ import ReactDOM from 'react-dom'
 import './index.css'
 import App from './App'
 import reportWebVitals from './reportWebVitals'
+import CssBaseline from '@material-ui/core/CssBaseline'
+import { ThemeProvider } from '@mui/material/styles'
+import { createTheme } from '@mui/material/styles'
+
+const theme = createTheme({
+  palette: {
+    mode: 'dark',
+  },
+})
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <App />
+    </ThemeProvider>
   </React.StrictMode>,
   document.getElementById('root'),
 )
